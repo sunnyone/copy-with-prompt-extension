@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- コピーアイコン - 下の書類 -->
+  <rect x="34" y="48" width="50" height="60" rx="4" ry="4" fill="none" stroke="black" stroke-width="8" />
+  
+  <!-- コピーアイコン - 上の書類 -->
+  <rect x="44" y="20" width="50" height="60" rx="4" ry="4" fill="none" stroke="black" stroke-width="8" />
+  
+  <!-- AI要素 - シンプルな一本線の稲妻 -->
+  <path d="M64 30 L58 50 L70 50 L60 75" stroke="black" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
