@@ -3,6 +3,7 @@
   "displayName": "Copy With Prompt",
   "description": "Copy the editor content with your prompt",
   "repository": "git@github.com:sunnyone/open-with-prompt.git",
+  "publisher": "sunnyone41",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.96.0"
