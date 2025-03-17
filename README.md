@@ -31,6 +31,10 @@ Currently, this extension does not provide any configurable settings. Future upd
 ### 0.0.1
 - Initial release with prompt input and combined copy functionality.
 
+### 0.0.2
+- Copy the filename to a quote string
+- Apply the VSCode style
+
 ---
 
 Thank you for using **Copy With Prompt**! Please report any issues or feature requests in the extension’s repository. Enjoy streamlining your workflow!
