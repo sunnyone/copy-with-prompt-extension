@@ -16,6 +16,9 @@ export function deactivate() {
 }
 
 class CopyWithPromptViewProvider implements vscode.WebviewViewProvider {
+  private _view?: vscode.WebviewView;
+  private _promptState: string = '';
+
   constructor(private readonly extensionUri: vscode.Uri) {
   }
 
@@ -24,6 +27,8 @@ class CopyWithPromptViewProvider implements vscode.WebviewViewProvider {
     context: vscode.WebviewViewResolveContext,
     _token: vscode.CancellationToken
   ) {
+    this._view = webviewView;
+    
     webviewView.webview.options = {
       enableScripts: true, // スクリプトを有効にする
     };
@@ -34,6 +39,15 @@ class CopyWithPromptViewProvider implements vscode.WebviewViewProvider {
       switch (message.command) {
         case 'copyWithPrompt':
           await this.handleCopyWithPrompt(message.prompt);
+          break;
+        case 'promptChanged':
+          this._promptState = message.text;
+          break;
+        case 'getState':
+          this._view?.webview.postMessage({ 
+            command: 'setState', 
+            text: this._promptState 
+          });
           break;
       }
     });

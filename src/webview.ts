@@ -89,9 +89,33 @@ export function getHtmlForWebview(webview: vscode.Webview): string {
 
       <script>
         const vscode = acquireVsCodeApi();
+        const promptInput = document.getElementById('promptInput');
+
+        // 初期表示時に状態を取得
+        window.addEventListener('load', () => {
+          vscode.postMessage({ command: 'getState' });
+        });
+
+        // プロンプトの変更を監視して状態を保存
+        promptInput.addEventListener('input', () => {
+          vscode.postMessage({
+            command: 'promptChanged',
+            text: promptInput.value
+          });
+        });
+
+        // 拡張機能からのメッセージを処理
+        window.addEventListener('message', event => {
+          const message = event.data;
+          switch (message.command) {
+            case 'setState':
+              promptInput.value = message.text || '';
+              break;
+          }
+        });
 
         document.getElementById('copyButton').addEventListener('click', () => {
-          const promptValue = document.getElementById('promptInput').value;
+          const promptValue = promptInput.value;
           vscode.postMessage({
             command: 'copyWithPrompt',
             prompt: promptValue
