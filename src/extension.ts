@@ -47,8 +47,9 @@ class CopyWithPromptViewProvider implements vscode.WebviewViewProvider {
     }
 
     const documentText = editor.document.getText();
+    const fileName = editor.document.fileName.split('/').pop() || '';
 
-    const copiedText = `${prompt}\n\n\`\`\`\n${documentText}\n\`\`\``;
+    const copiedText = `${prompt}\n\n\`\`\`${fileName}\n${documentText}\n\`\`\``;
 
     await vscode.env.clipboard.writeText(copiedText);
 
