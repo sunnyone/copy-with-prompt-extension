@@ -35,6 +35,9 @@ Currently, this extension does not provide any configurable settings. Future upd
 - Copy the filename to a quote string
 - Apply the VSCode style
 
+### 0.0.3
+- Keep the prompt content
+
 ---
 
 Thank you for using **Copy With Prompt**! Please report any issues or feature requests in the extension’s repository. Enjoy streamlining your workflow!

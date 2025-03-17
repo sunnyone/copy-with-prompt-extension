@@ -4,7 +4,7 @@
   "description": "Copy the editor content with your prompt",
   "repository": "git@github.com:sunnyone/copy-with-prompt-extension.git",
   "publisher": "sunnyone41",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.96.0"
   },
